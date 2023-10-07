@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    由于需要悬浮显示分数，所以不再使用线性布局而是相对布局-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_above="@+id/ll_bottom"
+        android:padding="6dp">
+
+        <SurfaceView
+            android:id="@+id/sv_game"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+<!--操作按钮分3排，中间一排是左右按钮，上下则是上下按钮-->
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_up"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_rd"
+            android:text="↑"
+            android:padding="0dp"
+            android:textSize="30sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_left"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:background="@drawable/btn_rd"
+                android:text="←"
+                android:padding="0dp"
+                android:textSize="30sp"/>
+            <Button
+                android:id="@+id/btn_right"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="70dp"
+                android:background="@drawable/btn_rd"
+                android:text="→"
+                android:padding="0dp"
+                android:textSize="30sp"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_down"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_rd"
+            android:padding="0dp"
+            android:text="↓"
+            android:textSize="30sp"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
